@@ -7,7 +7,7 @@ A Discord bot that uses Stable Diffusion AI to generate a picture of food whenev
 2. Create a .env file with the following lines:
 DISCORD_TOKEN={Your Bot Token} 
 DISCORD_GUILD={Your Server Name}
-3. (On Windows) run the Stable Diffusion Webui script webui-user.bat after editing it to place '--api' after COMMANDLINE_ARGS. A webpage will open up: you can ignore it
-4. In the command line, run `python bot.py`
+3. (On Windows) edit the script webui-user.bat to place '--api --nowebui' after COMMANDLINE_ARGS. Save it in the same folder as webui-user-api-noui.bat.  
+4. (On Windows) run the Stable Diffusion Webui script webui-user-api-noui.bat. Make sure the file structure is correct (the easiest way is to place this repo and the Stable Diffusion Webui repo in the same folder). 
 
 To change servers, trigger roles, etc, you must edit the .env file, the bot's discord auth token, etc
