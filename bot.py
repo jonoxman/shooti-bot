@@ -13,6 +13,7 @@ import ast
 URL = "http://127.0.0.1:7860"
 CACHE_SIZE = 6 # Number of images to be stored in the cache at once
 BATCH_SIZE = 3 # Number of images to be generated when the cache needs replenishing below a certain threshold
+TRIGGER_PROBABILITY = 0.05 #Probability to send an image when triggered
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -53,7 +54,7 @@ async def on_message(message):
     if role in message.author.roles:
         print(f"Targeted role '{role.name}' posted!")
         r = random.random()
-        if r < 1:
+        if r < TRIGGER_PROBABILITY:
             options = [name for name in os.listdir('image_cache/')][1:] # Don't put prompts that start with "." into the objects - this could break
             if not options:
                 if OUT_OF_IMAGES_MESSAGE: #if the message is empty, don't reply
