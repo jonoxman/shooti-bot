@@ -1,9 +1,9 @@
-# Food Poster Bot
+# Image Poster Bot
 A Discord bot that uses Stable Diffusion AI to generate an image of some random option in some particular style and reply with it whenever a user with a given role types, with a random chance. Images are cached to allow for instant replies - the cache size can be customized based on demand (default is 7).
 
 ## How To Use
 
-1. Install Stable Diffusion Webui found here https://github.com/AUTOMATIC1111/stable-diffusion-webui
+1. Install Stable Diffusion Webui found here https://github.com/AUTOMATIC1111/stable-diffusion-webui. Set up the web ui, downloading whatever model you want to use and placing it into the models folder in the SDW directory. 
 2. Edit the .env.example file by filling in each key. Save it as .env (change the extension)
 ### Notes on .env file
 - Leave OUT_OF_IMAGES_MESSAGE blank (still include the key) if you want the bot to do nothing when the cache is empty.
@@ -17,7 +17,7 @@ To change servers, trigger roles, etc, you can simply edit the .env file.
 
 ### Sample .env File Lines
 
-- PROMPT_STYLES=["RAW photo, <lora:foodphoto:0.7>, foodphoto, dslr, soft lighting, high quality, film grain, Fujifilm XT"]
+- PROMPT_STYLES=["RAW photo, foodphoto, dslr, soft lighting, high quality, film grain, Fujifilm XT"]
 - PROMPT_SPECIFICS=['Sushi Rolls', 'Bowl of Ramen', 'Shish Kabob', 'Bowl of Pho', 'Pie', 'Pad Thai', 'Lasagna', 'Kimchi', 'Fried Chicken Drumsticks', 'Pepperoni Pizza', 'Burger with Fries', 'Donuts', - 'Poutine', 'Burrito', 'Mac and Cheese', 'Wonton Soup', 'Chocolate Cake', 'Barbecued Ribs', 'Sashimi', 'Croissant', 'Tacos', 'Grilled Steak']
 - NEG_PROMPT=digusting, slimy, worms, grotesque
 
