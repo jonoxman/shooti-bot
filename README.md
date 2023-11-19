@@ -4,19 +4,15 @@ A Discord bot that uses Stable Diffusion AI to generate an image of some random 
 ## How To Use
 
 1. Install Stable Diffusion Webui found here https://github.com/AUTOMATIC1111/stable-diffusion-webui
-2. Create a .env file with the following lines:
-DISCORD_TOKEN={Your Bot Token} 
-DISCORD_GUILD={Your Server Name}
-TARGET_ROLE={Your Trigger Role}
-OUT_OF_IMAGES_MESSAGE={Message To Display When Cache Is Empty.}
-PROMPT_STYLE={Prompt Baseline}
-PROMPT_SPECIFICS={Specific Objects For Prompt}
-
+2. Edit the .env.example file by filling in each key. Save it as .env (change the extension)
 ### Notes on .env file
 - Leave OUT_OF_IMAGES_MESSAGE blank (still include the key) if you want the bot to do nothing when the cache is empty.
 - PROMPT_STYLE and PROMPT_SPECIFICS must be given in list format ['A', 'B', 'C']. (If you only want one option, put it in as a single-element list ['A'].) If lists have multiple elements, one will be chosen randomly for each generated image. 
+- NEG_PROMPT is a single negative prompt string consisting of what you want the model to avoid generating. For example, if you are generating pictures of food, you might make this something like 'disgusting, slimy, worms'.
 
 3. (On Windows) edit the script webui-user.bat to place '--api --nowebui --port 7860' after COMMANDLINE_ARGS. If you have an NVidia 10XX series or better GPU, also add '--xformers' to the end fo the line. Save as webui-user-api-noui.bat in the same folder.  
 4. (On Windows) run the Stable Diffusion Webui script webui-user-api-noui.bat. Make sure the file structure is correct (the easiest way is to place this repo and the Stable Diffusion Webui repo in the same folder). 
 
-To change servers, trigger roles, etc, you must edit the .env file, the bot's discord auth token, etc
+To change servers, trigger roles, etc, you can simply edit the .env file.
+
+### NOTE: Don't try to generate phrases starting with '.': this breaks parsing
