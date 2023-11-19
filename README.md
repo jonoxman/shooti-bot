@@ -1,4 +1,4 @@
-# Food Poster Bot
+# Image Poster Bot
 A Discord bot that uses Stable Diffusion AI to generate an image of some random option in some particular style and reply with it whenever a user with a given role types, with a random chance. Images are cached to allow for instant replies - the cache size can be customized based on demand (default is 7).
 
 ## How To Use
